@@ -1,0 +1,28 @@
+{
+    "name": "proxy",
+    "version": "1.0.0",
+    "description": "",
+    "main": "app.js",
+    "scripts": {
+        "dev": "nodemon server.js",
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "docker:build": "docker build -t rjsingh/app .",
+        "docker:start": "docker run -d --name app2 -p 3001:3001 rjsingh/app",
+        "redis:start": "/usr/bin/redis-server",
+        "start": "npm run redis:start & node ./server.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "axios": "^0.27.2",
+        "dot": "^1.1.3",
+        "dotenv": "^16.0.1",
+        "env": "0.0.2",
+        "express": "^4.18.1",
+        "http": "0.0.1-security",
+        "http-proxy": "^1.18.1",
+        "nodemon": "^2.0.16",
+        "redis": "^4.1.0",
+        "url": "^0.11.0"
+    }
+}
